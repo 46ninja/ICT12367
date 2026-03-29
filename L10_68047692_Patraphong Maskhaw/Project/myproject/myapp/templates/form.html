@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    /* ตั้งค่ากล่องฟอร์ม */
+    .form-card {
+        background-color: #ebeaea;
+        border-radius: 15px; /* มุมโค้งมน */
+        padding: 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* เงาเริ่มต้นแบบบางๆ */
+        border: 1px solid #1131fe;
+        
+        /* หัวใจหลัก: ป้องกันการยืดและจัดกึ่งกลาง */
+        max-width: 500px; 
+        margin: 0 auto; 
+        
+        /* ตั้งค่าความสมูทเวลาขยับ */
+        transition: all 0.3s ease-in-out; 
+    }
+
+    /* เอฟเฟกต์ตอนเอาเมาส์ไปชี้ (Hover) */
+    .form-card:hover {
+        transform: translateY(-8px); /* ขยับลอยขึ้น 8px */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* เพิ่มเงาให้เข้มและกว้างขึ้นให้ดูมีมิติ */
+    }
+
+    /* ปรับแต่งปุ่มให้เข้ากับธีมสีม่วง */
+    .btn-custom-purple {
+        background-color: #6f42c1;
+        border-color: #6f42c1;
+        color: white;
+    }
+    .btn-custom-purple:hover {
+        background-color: #59339d;
+        border-color: #59339d;
+        color: white;
+    }
+</style>
+
+<div class="container mt-5 mb-5">
+    <div class="form-card">
+        <h3 class="text-center text-purple fw-bold mb-4">เพิ่มข้อมูลประชากร</h3>
+        
+        <form method="POST">
+            {% csrf_token %} <div class="mb-3">
+                <label for="name" class="form-label fw-bold">ชื่อประชากร</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="กรอกชื่อ-นามสกุล" required>
+            </div>
+            
+            <div class="mb-4">
+                <label for="age" class="form-label fw-bold">อายุ</label>
+                <input type="number" class="form-control" id="age" name="age" placeholder="กรอกอายุ" required>
+            </div>
+            
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-custom-purple py-2 fw-bold">บันทึกข้อมูล</button>
+                <a href="/" class="btn btn-outline-secondary py-2">ยกเลิกและกลับหน้าแรก</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

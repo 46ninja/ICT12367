@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block content %}
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            ยินดีต้อนรับสู่เว็บไซต์ของรายวิชา ICT12367
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <h4 class="text-purple fw-bold mb-4">ยินดีต้อนรับเข้าสู่ประชากร</h4>
+
+        <table class="table text-center align-middle">
+            <thead>
+                <tr>
+                    <th scope="col">รหัสประชากร</th>
+                    <th scope="col">ชื่อประชากร</th>
+                    <th scope="col">อายุ</th>
+                    <th scope="col">แก้ไข</th>
+                    <th scope="col">ลบ</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for person in persons %}
+                <tr>
+                    <td>{{ person.id }}</td>
+                    <td>{{ person.name }}</td> <td>{{ person.age }}</td>  <td>
+                        <a href="#" class="btn btn-warning btn-sm text-white px-3">แก้ไข</a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-danger btn-sm px-4">ลบ</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="text-muted">ยังไม่มีข้อมูลประชากร</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
