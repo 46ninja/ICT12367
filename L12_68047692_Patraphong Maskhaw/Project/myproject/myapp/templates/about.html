@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>คลังภาพ - ระบบจัดการรายวิชา</title>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8 text-center">
+            <h1 class="display-4 fw-bold mb-5 text-uppercase text-light" style="font-family: 'Open Sans', sans-serif;">
+                Gallery
+            </h1>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center g-4">
+        <div class="col">
+            <div class="card gallery-card h-100 shadow-sm border-0 bg-dark text-light overflow-hidden">
+                <div class="ratio ratio-4x3">
+                    <img src="https://picsum.photos/200/150?1" class="card-img-top object-fit-cover" alt="Rarin Photo Gallery">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card gallery-card h-100 shadow-sm border-0 bg-dark text-light overflow-hidden">
+                <div class="ratio ratio-4x3">
+                    <img src="https://picsum.photos/200/150?2" class="card-img-top object-fit-cover" alt="Rarin Photo Gallery">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card gallery-card h-100 shadow-sm border-0 bg-dark text-light overflow-hidden">
+                <div class="ratio ratio-4x3">
+                    <img src="https://picsum.photos/200/150?3" class="card-img-top object-fit-cover" alt="Rarin Photo Gallery">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card gallery-card h-100 shadow-sm border-0 bg-dark text-light overflow-hidden">
+                <div class="ratio ratio-4x3">
+                    <img src="https://picsum.photos/200/150?4" class="card-img-top object-fit-cover" alt="Rarin Photo Gallery">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card gallery-card h-100 shadow-sm border-0 bg-dark text-light overflow-hidden">
+                <div class="ratio ratio-4x3">
+                    <img src="https://picsum.photos/200/150?5" class="card-img-top object-fit-cover" alt="Rarin Photo Gallery">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card gallery-card h-100 shadow-sm border-0 bg-dark text-light overflow-hidden">
+                <div class="ratio ratio-4x3">
+                    <img src="https://picsum.photos/200/150?6" class="card-img-top object-fit-cover" alt="Rarin Photo Gallery">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card gallery-card h-100 shadow-sm border-0 bg-dark text-light overflow-hidden">
+                <div class="ratio ratio-4x3">
+                    <img src="https://picsum.photos/200/150?7" class="card-img-top object-fit-cover" alt="Rarin Photo Gallery">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card gallery-card h-100 shadow-sm border-0 bg-dark text-light overflow-hidden">
+                <div class="ratio ratio-4x3">
+                    <img src="https://picsum.photos/200/150?8" class="card-img-top object-fit-cover" alt="Rarin Photo Gallery">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card gallery-card h-100 shadow-sm border-0 bg-dark text-light overflow-hidden">
+                <div class="ratio ratio-4x3">
+                    <img src="https://picsum.photos/200/150?9" class="card-img-top object-fit-cover" alt="Rarin Photo Gallery">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    /* CSS เพิ่มเติมสำหรับคลังภาพ */
+    .gallery-card {
+        border-radius: 1rem; /* ทำให้มุมมน */
+        transition: transform .2s ease-in-out, box-shadow .2s ease-in-out; /* ควบคุมแอนิเมชันตอนขยับ */
+    }
+
+    /* เอฟเฟกต์แอนิเมชันตอนเอาเมาส์ไปวาง: ขยายเล็กน้อย, ยกขึ้น, และเพิ่มเงา */
+    .gallery-card:hover {
+        transform: scale(1.05) translateY(-5px);
+        box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.1) !important; /* เงาสีอ่อนในธีมมืด */
+    }
+
+    /* ตรวจสอบว่ารูปภาพภายในสัดส่วน ratio ครอบคลุมพื้นที่ */
+    .gallery-card .ratio {
+        border-radius: 1rem;
+    }
+
+    .gallery-card img {
+        border-radius: 1rem;
+    }
+
+    /* สีเฉพาะคำว่า Gallery */
+    .container h1.display-4 {
+        color: #6f42c1 !important;
+    }
+</style>
+{% endblock %}
