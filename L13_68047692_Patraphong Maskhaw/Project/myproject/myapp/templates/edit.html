@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    /* สไตล์กล่องฟอร์มแบบเดียวกับหน้าเพิ่มข้อมูล เพื่อความสวยงามต่อเนื่อง */
+    .form-card {
+        background-color: #ffffff;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        border: 1px solid #eaeaea;
+        max-width: 500px; 
+        margin: 0 auto; 
+        transition: all 0.3s ease-in-out; 
+    }
+    .form-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    .btn-custom-purple {
+        background-color: #6f42c1;
+        border-color: #6f42c1;
+        color: white;
+    }
+    .btn-custom-purple:hover {
+        background-color: #59339d;
+        border-color: #59339d;
+        color: white;
+    }
+</style>
+
+<div class="container mt-5 mb-5">
+    <div class="form-card">
+        <h3 class="text-center text-warning fw-bold mb-4">แก้ไขข้อมูลประชากร</h3>
+        
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="mb-3">
+                <label for="name" class="form-label fw-bold">ชื่อประชากร</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ person.name }}" required>
+            </div>
+            
+            <div class="mb-4">
+                <label for="age" class="form-label fw-bold">อายุ</label>
+                <input type="number" class="form-control" id="age" name="age" value="{{ person.age }}" required>
+            </div>
+            
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-warning py-2 fw-bold text-dark">บันทึกการแก้ไข</button>
+                <a href="/" class="btn btn-outline-secondary py-2">ยกเลิก</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
